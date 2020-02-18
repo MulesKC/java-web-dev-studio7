@@ -2,15 +2,21 @@ package org.launchcode.studio7;
 
 public abstract class BaseDisc {
     private String title;
-    private String author;
     private int storageCapacity;
     private int writeSpeed;
     private int readSpeed;
     private String manufacturer;
+    public int spinSpeed;
 
     public BaseDisc (String title){  };
 
-    public BaseDisc(String title, String author, int storageCapacity, int writeSpeed, int readSpeed, String manufacturer) {};
+    public BaseDisc(String title, int storageCapacity, int writeSpeed, int readSpeed) {
+        spinSpeed = 300;
+        this.title = title;
+        this.storageCapacity = storageCapacity;
+        this.writeSpeed = writeSpeed;
+        this.readSpeed = readSpeed;
+    };
 
 
     public String getTitle() {
@@ -19,14 +25,6 @@ public abstract class BaseDisc {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
     public int getStorageCapacity() {
@@ -53,17 +51,13 @@ public abstract class BaseDisc {
         this.readSpeed = readSpeed;
     }
 
-    public String getManufacturer() {
-        return manufacturer;
-    }
+    public String getManufacturer() { return manufacturer;    }
 
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
+    public void setManufacturer(String manufacturer) { this.manufacturer = manufacturer;   }
 
     @Override
     public String toString() {
-        return this.getTitle() + "\n" + this.getAuthor();
+        return this.getTitle();
     }
 
 
